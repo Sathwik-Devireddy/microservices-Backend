@@ -1,10 +1,10 @@
 const fs = require("fs");
 const crypto = require("crypto");
 console.log("1.Start");
-setTimeOut(() => {
+setTimeout(() => {
   console.log("2.0s callback");
 }, 0);
-setTimeOut(() => {
+setTimeout(() => {
   console.log("3.2nd 0s callback");
 }, 0);
 setImmediate(() => {
@@ -22,5 +22,6 @@ fs.readFile(__filename, () => {
 crypto.pbkdf2("secret", "salt", 10000, 64, "sha512", (err, key) => {
   if (err) throw err;
   console.log("8.pbkdf2 callback");
+  console.log(key);
 });
-console.log("end");
+console.log("9.end");
